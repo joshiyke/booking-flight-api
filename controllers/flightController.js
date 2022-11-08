@@ -35,9 +35,11 @@ exports.createFlight = async (req, res) => {
     const newFlight = {
       id: uuid(),
       title,
-      time: new Date().toLocaleTimeString(),
+      // time: new Date().toLocaleTimeString(),
+      time,
       price,
-      date: new Date().toLocaleDateString(),
+      // date: new Date().toLocaleDateString(),
+      date,
     };
 
     Flights.push(newFlight);
@@ -50,33 +52,34 @@ exports.createFlight = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-// Update / edit user
-exports.updateUser = async (req, res) => {
+// UPDATE / EDIT FLIGHT
+exports.updateFlight = async (req, res) => {
   try {
     let id = req.params.id;
-    const user = Flights.find((user) => user.id === id);
-    const { email, name, password } = await req.body;
-    user.email = email;
-    user.name = name;
-    user.password = password;
+    const flight = Flights.find((flight) => flight.id === id);
+    const { title, time, price, date } = await req.body;
+    flight.title = title;
+    flight.time = time;
+    flight.price = price;
+    flight.date = date;
     res.status(200).json({
-      message: 'User Updated',
-      user,
+      message: 'Flight Updated / Edited',
+      flight,
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-// delete User
-exports.deleteUser = async (req, res) => {
+// TERMINATE / DELETE FLIGHT
+exports.deleteFlight = async (req, res) => {
   try {
     let id = req.params.id;
-    const user = Flights.find((user) => user.id === id);
-    Flights.splice(Flights.indexOf(user), 1);
+    const flight = Flights.find((flight) => flight.id === id);
+    Flights.splice(Flights.indexOf(flight), 1);
     res.status(200).json({
-      message: 'User Deleted',
-      user,
+      message: 'Flight Terminated / Deleted',
+      flight,
     });
   } catch (err) {
     res.status(500).json({ message: err.message });

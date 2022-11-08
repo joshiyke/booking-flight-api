@@ -1,7 +1,7 @@
 {
-  "name": "book_flight",
+  "name": "booking-flight-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Task as Project done in partial fulfillment of the requirement for the API training at Zuri Fullstack Development Programme",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,12 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ikechukwu Joshua Anyasi",
   "license": "ISC",
   "dependencies": {
-    "book_flight": "file:",
+    "booking-flight-api": "file:",
     "express": "^4.18.1",
     "mongoose": "^6.4.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "uuid": "^9.0.0"
   }
 }

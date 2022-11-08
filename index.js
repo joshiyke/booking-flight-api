@@ -8,7 +8,7 @@ const app = express();
 
 app.use(json());
 
-app.use('/flight', flight);
+app.use('/', routes);
 
 const PORT = process.env.PORT || 5000;
 
