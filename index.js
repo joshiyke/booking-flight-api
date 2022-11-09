@@ -2,15 +2,15 @@ const express = require('express');
 
 const { json } = require('express');
 
-const user = require('./router/userRoute');
+const flight = require('./router/flightRoute');
 
 const app = express();
 
 app.use(json());
 
-app.use('/user', user);
+app.use('/flight', flight);
 
-const PORT = process.env.PORT || 3000; // port of connect
+const PORT = process.env.PORT || 6000; // port of connect
 
 app.get('/', (req, res) => {
   res.send('Zuri Training Portal');
