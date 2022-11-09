@@ -1,14 +1,16 @@
 {
-  "name": "booking-flight-api",
+  "name": "rest-api-project-demo",
   "version": "1.0.0",
-  "description": "Task as Project done in partial fulfillment of the requirement for the API training at Zuri Fullstack Development Programme",
+  "description": "Rest API project done in partial fulfillment of the requirement for Fullstack with Nodejs Training at Zuri Cohort 2",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "api"
+  ],
   "author": "Ikechukwu Joshua Anyasi",
   "license": "ISC",
   "dependencies": {
@@ -16,6 +18,7 @@
     "express": "^4.18.1",
     "mongoose": "^6.4.0",
     "nodemon": "^2.0.16",
+    "rest-api-project-demo": "file:",
     "uuid": "^9.0.0"
   }
 }
