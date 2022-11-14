@@ -1,5 +1,6 @@
-const { Flights } = require('../model/Flight');
+const { Flights } = require('../models/Flight');
 const { v4: uuid } = require('uuid');
+const { reSync } = require('fs');
 
 // GET ALL FLIGHTS
 exports.getFlights = async (req, res) => {
@@ -32,12 +33,20 @@ exports.getFlight = async (req, res) => {
 exports.createFlight = async (req, res) => {
   try {
     const { title, price } = await req.body;
+    // const newFlight = {
+    //   id: uuid(),
+    //   title,
+    //   time: new Date().toLocaleTimeString(),
+    //   price,
+    //   date: new Date().toLocaleDateString(),
+    // };
+
     const newFlight = {
       id: uuid(),
       title,
-      time: new Date().toLocaleTimeString(),
+      time,
       price,
-      date: new Date().toLocaleDateString(),
+      date,
     };
 
     Flights.push(newFlight);
@@ -52,7 +61,7 @@ exports.createFlight = async (req, res) => {
 };
 
 // UPDATE / EDIT FLIGHT
-exports.updateUser = async (req, res) => {
+exports.updateFlight = async (req, res) => {
   try {
     let id = req.params.id;
     const flight = Flights.find((flight) => flight.id === id);
