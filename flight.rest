@@ -9,17 +9,17 @@ GET http://localhost:5000/flight/b067d7a8-6e26-4160-91a6-07b052936431 HTTP/1.1
 POST http://localhost:5000/flight HTTP/1.1
 Content-Type: application/json
 
-# {
-#     "title": "flight to canada",
-#     "price": "26000"
-# }
-
 {
-    "title": "flight to Germany",
-    "time": "10pm",
-    "price": 28000,
-    "date": "26-06-2022"
+    "title": "flight to canada",
+    "price": "26000"
 }
+
+# {
+#     "title": "flight to Germany",
+#     "time": "10pm",
+#     "price": 28000,
+#     "date": "26-06-2022"
+# }
 
 ###
 PUT http://localhost:5000/flight/e61fbd7b-5e2c-4899-870c-a987c599620c HTTP/1.1

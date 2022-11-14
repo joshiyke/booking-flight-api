@@ -32,21 +32,22 @@ exports.getFlight = async (req, res) => {
 // ADD / BOOK FLIGHT
 exports.createFlight = async (req, res) => {
   try {
-    const { title, price } = await req.body;
+    // const { title, time, price, date } = await req.body;
     // const newFlight = {
     //   id: uuid(),
     //   title,
-    //   time: new Date().toLocaleTimeString(),
+    //   time,
     //   price,
-    //   date: new Date().toLocaleDateString(),
+    //   date,
     // };
 
+    const { title, price } = await req.body;
     const newFlight = {
       id: uuid(),
       title,
-      time,
+      time: new Date().toLocaleTimeString(),
       price,
-      date,
+      date: new Date().toLocaleDateString(),
     };
 
     Flights.push(newFlight);
